@@ -39,7 +39,7 @@
                             <p>投稿者{{ $post->user->name }}</p>
                         <div>
                         <div class="like">
-                            <p>いいね{{ $post->likes->count }}<p>
+                            <p>いいね{{ $post->likes->count() }}<p>
                         <div>
                     </div>
                 </div>
