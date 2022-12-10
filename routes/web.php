@@ -23,6 +23,8 @@ Route::get('/posts/create', 'App\Http\Controllers\PostController@create');
 Route::post('/posts', 'App\Http\Controllers\PostController@store');
 Route::get('/posts/{post}', 'App\Http\Controllers\PostController@post');
 
+
+
 Route::get('/games', function () {
     return view('Games/index');
 });

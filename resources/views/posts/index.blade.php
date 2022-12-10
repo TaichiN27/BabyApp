@@ -21,6 +21,15 @@
         </style>
     </head>
     <body>
+    
+    <a class="menu-toggle rounded" href="#"><i class="fas fa-bars"></i></a>
+        <nav id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="/mypage">マイページ</a></li>
+                <li class="sidebar-nav-item"><a href="/">TOP</a></li>
+                <li class="sidebar-nav-item"><a href="/games">ゲーム</a></li>
+            </ul>
+        </nav>
         [<a href='/posts/create'>create</a>]
         <div class='posts'>
             @foreach ($posts as $post)
@@ -29,26 +38,21 @@
                         <h3><a href="/posts/{{ $post->id }}">タイトル{{ $post->title }}</a></h3>
                     </div>
                     <div class="text">
-                        <p>本文</p>
+                        <p>本文{{ $post->title }}</p>
                     </div>
                     <div class>
                         <div class="user">
-                            <p>投稿者</p>
+                            <p>投稿者{{ $post->user->name }}</p>
                         <div>
                         <div class="like">
-                            <p>いいね<p>
+                            <p>いいね{{ $post->likes->count }}<p>
                         <div>
                     </div>
                 </div>
             @endforeach
         </div>
-
- miya-feature-task-01
         <div class="paginate">
             {{ $posts->links() }}
         </div>
-        　　　　　　　
- master
-
     </body>
 </html>
