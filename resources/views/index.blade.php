@@ -43,9 +43,7 @@
         <div class="paginate">
             {{ $posts->links() }}
         </div>
-=======
-        
-        <script src="{{ asset('/js/games.js') }}"></script>
+        　　　　　　　
  master
     </body>
 </html>
