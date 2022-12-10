@@ -21,10 +21,12 @@
         </style>
     </head>
     <body>
+        [<a href='/posts/create'>create</a>]
         <div class='posts'>
+            @foreach ($posts as $post)
                 <div class="post">
                     <div class="title">
-                        <h3>タイトル</h3>
+                        <h3><a href="/posts/{{ $post->id }}">タイトル{{ $post->title }}</a></h3>
                     </div>
                     <div class="text">
                         <p>本文</p>
@@ -38,6 +40,7 @@
                         <div>
                     </div>
                 </div>
+            @endforeach
         </div>
  
         <div class="paginate">

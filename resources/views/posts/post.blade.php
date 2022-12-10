@@ -23,7 +23,7 @@
     <body>
         <div class="post">
             <div class="title">
-                <h3>タイトル</h3>
+                <h3>{{ $post->title }}</h3>
             </div>
             <div class="text">
                 <p>本文</p>

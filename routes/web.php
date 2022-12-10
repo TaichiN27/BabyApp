@@ -17,8 +17,11 @@ use App\Http\Controllers\GameController;  //外部にあるPostControllerクラ�
 |
 */
 
-
+//保護者用
 Route::get('/', 'App\Http\Controllers\PostController@index');
+Route::get('/posts/create', 'App\Http\Controllers\PostController@create');
+Route::post('/posts', 'App\Http\Controllers\PostController@store');
+Route::get('/posts/{post}', 'App\Http\Controllers\PostController@post');
 
 Route::get('/games', function () {
     return view('Games/index');
