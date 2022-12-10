@@ -39,5 +39,7 @@
                     </div>
                 </div>
         </div>
+        
+        <script src="{{ asset('/js/games.js') }}"></script>
     </body>
 </html>
