@@ -10,9 +10,10 @@ class Post extends Model
 
     protected $table = 'posts';
         protected $fillable = [
-            'id',
+            'user_id',
             'title',
             'text',
+            'image'
         ];
 
     
@@ -20,5 +21,17 @@ class Post extends Model
     {
         //降順後、10件の制限
         return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
+    
+    //Userとのrelation
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+    
+    //Likeとのrelation
+    public function likes()
+    {
+        return $this->hasMany(Like::class, 'post_id');
     }
 }
