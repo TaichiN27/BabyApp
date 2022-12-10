@@ -22,7 +22,7 @@
                             <p>投稿者</p>
                         <div>
                         <div class="like">
-                            <p>いいね<p>
+                            <p>いいね{{ $post->likes->count() }}<p>
                         <div>
                     </div>
                 </div>

@@ -27,17 +27,18 @@
                 <h3>{{ $post->title }}</h3>
             </div>
             <div class="text">
-                <p>本文</p>
+                <p>本文{{ $post->title }}</p>
             </div>
             <div class>
                 <div class="user">
-                    <p>投稿者</p>
+                    <p>投稿者{{ $post->user->name }}</p>
                 <div>
                 <div class="like">
                     <p>いいね<p>
                 <div>
             </div>
         </div>
+        <div class="back">[<a href="/">back</a>]</div>
     </body>
 </html>
 </x-app-layout>
