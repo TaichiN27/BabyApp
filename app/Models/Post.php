@@ -7,14 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    /*
-    use SoftDeletes;
-        protected $fillable = [
-            'id',
-            'name',
-            'nickname',
-        ];
-    */
+    protected $fillable = [
+        'user_id', 'title', 'text',
+    ];
     
     public function getPaginateByLimit(int $limit_count = 10)
     {

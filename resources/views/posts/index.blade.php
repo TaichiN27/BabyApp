@@ -1,3 +1,4 @@
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -21,7 +22,7 @@
         </style>
     </head>
     <body>
-        [<a href='/posts/create'>create</a>]
+        <a href='/posts/create'>[create]</a>
         <div class='posts'>
             @foreach ($posts as $post)
                 <div class="post">
@@ -42,13 +43,10 @@
                 </div>
             @endforeach
         </div>
-
- miya-feature-task-01
         <div class="paginate">
             {{ $posts->links() }}
         </div>
-        　　　　　　　
- master
 
     </body>
 </html>
+</x-app-layout>
