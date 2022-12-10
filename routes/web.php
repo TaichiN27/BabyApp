@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 use App\Http\Controllers\GameController;  //外部にあるPostControllerクラスをインポート。
 
@@ -16,6 +17,9 @@ use App\Http\Controllers\GameController;  //外部にあるPostControllerクラ�
 |
 */
 
+miya-feature-task-01
+Route::get('/', 'App\Http\Controllers\PostController@index');
+=======
 Route::get('/games', function () {
     return view('Games/index');
 });
@@ -25,3 +29,4 @@ Route::get('/', function () {
     return view('index');
 });
 
+master
