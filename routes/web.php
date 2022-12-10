@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\GameController;  //外部にあるPostControllerクラスをインポート。
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/games', function () {
+    return view('Games/index');
+});
+
+
 Route::get('/', function () {
     return view('index');
 });
+
