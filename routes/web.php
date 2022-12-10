@@ -17,9 +17,8 @@ use App\Http\Controllers\GameController;  //外部にあるPostControllerクラ�
 |
 */
 
-miya-feature-task-01
+
 Route::get('/', 'App\Http\Controllers\PostController@index');
-=======
 Route::get('/games', function () {
     return view('Games/index');
 });

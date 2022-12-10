@@ -39,13 +39,10 @@
                     </div>
                 </div>
         </div>
- miya-feature-task-01
         <div class="paginate">
             {{ $posts->links() }}
         </div>
-=======
         
         <script src="{{ asset('/js/games.js') }}"></script>
- master
     </body>
 </html>
