@@ -1,11 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
-
 use App\Http\Controllers\GameController;  //外部にあるPostControllerクラスをインポート。
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,17 +14,27 @@ use App\Http\Controllers\GameController;  //外部にあるPostControllerクラ�
 |
 */
 
-//保護者用
-Route::get('/', 'App\Http\Controllers\PostController@index');
-Route::get('/posts/create', 'App\Http\Controllers\PostController@create');
-Route::post('/posts', 'App\Http\Controllers\PostController@store');
-Route::get('/posts/{post}', 'App\Http\Controllers\PostController@post');
 
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/', 'App\Http\Controllers\PostController@index')->name('index');
+    Route::get('/posts/create', 'App\Http\Controllers\PostController@create');
+    Route::post('/posts', 'App\Http\Controllers\PostController@store');
+    Route::get('/posts/{post}', 'App\Http\Controllers\PostController@post');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 Route::get('/games', function () {
     return view('Games/index');
 });
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+require __DIR__.'/auth.php';

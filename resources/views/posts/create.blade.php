@@ -1,3 +1,4 @@
+<x-app-layout>
 <!DOCTYPE HTML>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -44,3 +45,4 @@
         <div class="back">[<a href="/">back</a>]</div>
     </body>
 </html>
+</x-app-layout>
