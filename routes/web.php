@@ -23,3 +23,6 @@ Route::get('/', 'App\Http\Controllers\PostController@index');
 Route::get('/games', function () {
     return view('Games/index');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
