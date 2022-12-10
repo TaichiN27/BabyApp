@@ -23,10 +23,3 @@ Route::get('/', 'App\Http\Controllers\PostController@index');
 Route::get('/games', function () {
     return view('Games/index');
 });
-
-
-Route::get('/', function () {
-    return view('index');
-});
-
-master
