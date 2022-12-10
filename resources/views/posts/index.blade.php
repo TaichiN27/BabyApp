@@ -22,7 +22,9 @@
         </style>
     </head>
     <body>
+
         <a href='/posts/create'>[create]</a>
+
         <div class='posts'>
             @foreach ($posts as $post)
                 <div class="post">
@@ -30,14 +32,14 @@
                         <h3><a href="/posts/{{ $post->id }}">タイトル{{ $post->title }}</a></h3>
                     </div>
                     <div class="text">
-                        <p>本文</p>
+                        <p>本文{{ $post->title }}</p>
                     </div>
                     <div class>
                         <div class="user">
-                            <p>投稿者</p>
+                            <p>投稿者{{ $post->user->name }}</p>
                         <div>
                         <div class="like">
-                            <p>いいね<p>
+                            <p>いいね{{ $post->likes->count }}<p>
                         <div>
                     </div>
                 </div>
@@ -46,7 +48,6 @@
         <div class="paginate">
             {{ $posts->links() }}
         </div>
-
     </body>
 </html>
 </x-app-layout>

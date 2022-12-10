@@ -7,9 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = [
-        'user_id', 'title', 'text',
-    ];
+
+    protected $table = 'posts';
+        protected $fillable = [
+            'id',
+            'title',
+            'text',
+        ];
+
     
     public function getPaginateByLimit(int $limit_count = 10)
     {
