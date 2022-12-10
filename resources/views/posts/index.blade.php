@@ -39,11 +39,13 @@
                     </div>
                 </div>
         </div>
+
  miya-feature-task-01
         <div class="paginate">
             {{ $posts->links() }}
         </div>
         　　　　　　　
  master
+
     </body>
 </html>

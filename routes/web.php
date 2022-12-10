@@ -19,6 +19,7 @@ use App\Http\Controllers\GameController;  //外部にあるPostControllerクラ�
 
 
 Route::get('/', 'App\Http\Controllers\PostController@index');
+
 Route::get('/games', function () {
     return view('Games/index');
 });
