@@ -13,18 +13,22 @@
     </head>
     
     <body>
-
         <div class="background">
-            <h1 class="movie_title">おすすめ動画</h1>
-            <h2>赤ちゃんを笑顔に！</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/sPq_tp0lGmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <h2>赤ちゃんが眠くなる・・・</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/QLxHzw8c1tE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <h2>あなたの知恵を共有しませんか？
-                <a href='/posts/create'>口コミ投稿はこちら</a>
-            </h2>
-
+            <div class="movie">
+                <h1>おすすめ動画</h1>
+                <div class="smile_movie">
+                    <h2 class=smile_title>赤ちゃんを笑顔に！</h2>
+                    <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/sPq_tp0lGmo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="sleep_movie">
+                    <h2 class="sleep_title">赤ちゃんが眠くなる・・・</h2>
+                    <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/QLxHzw8c1tE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+                <h2 class="create">あなたの知恵を共有しませんか？
+                    <a href="/posts/create" class="btn btn--orange btn--cubic btn--shadow">口コミ投稿はこちら！</a>
+                </h2>
 
                 <div class='posts'>
                     @foreach ($posts as $post)
