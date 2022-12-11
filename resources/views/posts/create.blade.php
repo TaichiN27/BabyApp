@@ -6,7 +6,7 @@
     </head>
     <body>
         <h1>投稿</h1>
-        <form action="/posts" method="POST">
+        <form action="/" method="POST">
             @csrf
             <div class="title">
                 <h2>投稿タイトル</h2>
@@ -14,7 +14,7 @@
             </div>
             <div class="text">
                 <h2>投稿内容</h2>
-                <textarea name="post[text]" placeholder="本文"></textarea>
+                <textarea name="post[text]" placeholder="赤ちゃんを泣き止ませるコツ、おすすめしたい動画のリンクなど"></textarea>
             </div>
                 <input type="submit" value="保存"/>
         </form>
