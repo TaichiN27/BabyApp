@@ -18,6 +18,11 @@
         
         <h1 class="movie_title">赤ちゃんを笑顔に！おすすめ動画</h1>
 
+        <h2>あなたの知恵を共有しませんか？
+            <a href='/posts/create'>口コミ投稿はこちら</a>
+        </h2>
+
+
         <div class='posts'>
             @foreach ($posts as $post)
                 <div class="post">
@@ -33,7 +38,7 @@
                         </div>
                         <div class="like">
                             @if(in_array($post->id, $is_like) == false)
-                                <form action="/" method="POST">
+                                <form action="/like" method="POST">
                                     @csrf
                                     <input type="hidden" name="post_id" value="{{ $post->id }}">
                                     <button type="submit">
