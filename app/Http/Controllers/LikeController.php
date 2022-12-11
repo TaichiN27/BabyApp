@@ -9,20 +9,22 @@ use Illuminate\Support\Facades\Auth;
 
 class LikeController extends Controller
 {
-    public function like(Post $post, Request $request)
+    public function like(Request $request)
     {
-        $like = New Like();
-        $like->post_id = $post->id;
-        $like->user_id = Auth::user()->id;
-        $nice->save();
-        return back();
+        Like::create([
+            'user_id'=>Auth::user()->id,
+            'post_id'=>$request->post_id,
+            ]);
+        
+        return redirect('/');
     }
     
-    public function unlike(Post $post, Request $request)
+    public function unlike(Like $like, Request $request)
     {
-        $user = Auth::user()->id;
-        $like = Nice::where('post_id', $post->id)->where('user_id', $user)->first();
-        $like->delete();
-        return back();
+        $unlike=$like->where('user_id', '=', Auth::user()->id)
+                        ->where('post_id', '=', $request->post_id);
+        $unlike->delete();
+        
+        return redirect('/');
     }
 }
