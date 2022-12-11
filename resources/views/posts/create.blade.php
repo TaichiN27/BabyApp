@@ -12,9 +12,9 @@
                 <h2>投稿タイトル</h2>
                 <input type="text" name="post[title]" placeholder="タイトル"/>
             </div>
-            <div class="body">
+            <div class="text">
                 <h2>投稿内容</h2>
-                <textarea name="post[body]" placeholder="本文"></textarea>
+                <textarea name="post[text]" placeholder="本文"></textarea>
             </div>
                 <input type="submit" value="保存"/>
         </form>
