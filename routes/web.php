@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/', 'App\Http\Controllers\PostController@index')->name('index');
     Route::get('/posts/create', 'App\Http\Controllers\PostController@create');
     Route::post('/posts', 'App\Http\Controllers\PostController@store');
+    Route::put('/posts/{post}', 'App\Http\Controllers\PostController@update');
     Route::get('/posts/{post}', 'App\Http\Controllers\PostController@post');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
