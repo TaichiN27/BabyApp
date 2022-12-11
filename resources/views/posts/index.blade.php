@@ -21,7 +21,7 @@
         <h2>あなたの知恵を共有しませんか？
             <a href='/posts/create'>口コミ投稿はこちら</a>
         </h2>
-
+        <i class="fa-regular fa-baby"></i>
 
         <div class='posts'>
             @foreach ($posts as $post)
