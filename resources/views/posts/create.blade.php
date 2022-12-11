@@ -16,7 +16,7 @@
                 <h2>投稿内容</h2>
                 <textarea name="post[text]" placeholder="赤ちゃんを泣き止ませるコツ、おすすめしたい動画のリンクなど"></textarea>
             </div>
-                <input type="submit" value="保存"/>
+            <input type="submit" value="保存"/>
         </form>
         <div class="back">[<a href="/">back</a>]</div>
     </body>

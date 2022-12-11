@@ -22,7 +22,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/', 'App\Http\Controllers\PostController@index')->name('index');
-    Route::post('/', 'App\Http\Controllers\LikeController@like');
+    Route::post('/like', 'App\Http\Controllers\LikeController@like');
     Route::delete('/', 'App\Http\Controllers\LikeController@unlike');
     Route::get('/posts/create', 'App\Http\Controllers\PostController@create');
     Route::post('/', 'App\Http\Controllers\PostController@store');
