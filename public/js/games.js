@@ -103,7 +103,12 @@ next.addEventListener('click', function(){
   doReload()
 },false)
 
+var parentsBtn = document.getElementById("parentsBtn")
 
+parentsBtn.addEventListener('click', function(e){
+    console.log(e)
+   window.location.replace('/');
+},false)
 
 
 

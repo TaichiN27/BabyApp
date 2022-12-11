@@ -2,7 +2,8 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img  src="/images/logo/笑顔の赤ちゃんイラスト.jpeg" class="img-fluid" alt="..." name="logo" style="width:200px;">
+                <h1 style="text-align: center; font-size:40px; font-weight:bold; margin:10px;">BabySmile</h1>
             </a>
         </x-slot>
 
