@@ -22,12 +22,12 @@ class PostController extends Controller
         $input = $request['post'];
     
         $input += ['user_id' => $request->user()->id];
-        
+        //dd($input);
         $post->fill($input)->save();
         return redirect('/posts/' . $post->id);
     }
     
-    public function update(PostRequest $request, Post $post)
+    public function update(Request $request, Post $post)
     {
         $input_post = $request['post'];
         $input_post += ['user_id' => $request->user()->id];  
