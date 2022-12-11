@@ -11,6 +11,7 @@ class PostController extends Controller
 {
     public function index(Post $post) 
     {
+        //
         $is_like=Like::where('user_id', '=', Auth::user()->id)->pluck('post_id')->toArray();
         return view('posts/index')->with(['posts' => $post->getPaginateByLimit()])->with(['is_like' => $is_like]);
     }
