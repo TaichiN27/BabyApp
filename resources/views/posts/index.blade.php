@@ -13,7 +13,6 @@
     </head>
     
     <body>
-
         <div class="background">
             <div class="movie">
                 <h1>おすすめ動画</h1>
@@ -30,7 +29,6 @@
                 <h2 class="create">あなたの知恵を共有しませんか？
                     <a href="/posts/create" class="btn btn--orange btn--cubic btn--shadow">口コミ投稿はこちら！</a>
                 </h2>
-
 
                 <div class='posts'>
                     @foreach ($posts as $post)
