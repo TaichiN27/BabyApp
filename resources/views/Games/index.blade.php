@@ -23,14 +23,18 @@
             
               <div class="row align-items-center mt-5">
                 <div class="col text-center">
-                  <h1 class="bg-warning rounded">ライオン</h1><br/>
-                  <img id="questionPic" src="/images/animals/パンダ.JPG" class="img-fluid" alt="...">
+                  <button id="ans1Pic" ></button>
                 </div>
                 <div class="col text-center">
-                  <h1 class="bg-warning rounded">ライオン</h1><br/>
-                  <img  src="/images/animals/パンダ.JPG" class="img-fluid" alt="...">
+                  <button id="ans2Pic" ><img  src="/images/animals/パンダ.JPG" class="img-fluid" alt="..." name="いぬ" height="500px"></button>
                 </div>
             　</div>
+            　<div　class="text-center">
+            　  <h1 id='ans' class="text-center fs-1r" style="color:yellow;"> 
+            　    
+            　  </h1>
+            　  <button id='next'>つぎへ</button>
+            　</div>　
         </div>
         <script src="{{ asset('js/games.js') }}"></script>
     </body>
