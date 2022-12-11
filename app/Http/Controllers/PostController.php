@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Like;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
     public function index(Post $post) 
     {
-        return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]);
+        $is_like=Like::where('user_id', '=', Auth::user()->id)->pluck('post_id')->toArray();
+        return view('posts/index')->with(['posts' => $post->getPaginateByLimit()])->with(['is_like' => $is_like]);
     }
     
     public function create()
@@ -22,7 +25,6 @@ class PostController extends Controller
         $input = $request['post'];
     
         $input += ['user_id' => $request->user()->id];
-        //dd($input);
         $post->fill($input)->save();
         return redirect('/');
     }
