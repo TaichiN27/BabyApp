@@ -12,6 +12,7 @@
     </head>
     
     <body>
+
         <div class="background">
             <h1 class="movie_title">おすすめ動画</h1>
             <h2>赤ちゃんを笑顔に！</h2>
@@ -22,6 +23,7 @@
             <h2>あなたの知恵を共有しませんか？
                 <a href='/posts/create'>口コミ投稿はこちら</a>
             </h2>
+
 
             <div class='container'>     
                 <div class='posts'>
