@@ -1,0 +1,17 @@
+.index-profile {
+    padding: 2% 2% 0 2%;
+  max-width: 50%;
+  margin: 1% auto;
+  background: #FFF;
+}
+.flex-display {
+    display: flex;
+    font-size: 12px;
+    text-align: right;
+}
+.user{
+    margin: 0 5% 0 0;
+}
+.like-color{
+    color: red;
+}
