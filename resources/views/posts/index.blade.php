@@ -21,10 +21,28 @@
                     <div class>
                         <div class="user">
                             <p>投稿者{{ $post->user->name}}</p>
-                        <div>
+                        </div>
                         <div class="like">
-                            <p>いいね<p>
-                        <div>
+                            @if(in_array($post->id, $is_like) == false)
+                                <form action="/" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                    <button type="submit">
+                                            いいね{{ $post->likes->count() }}
+                                    </button>
+                                </form>
+                            @else
+                                <form action="/" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                    <button type="submit">
+                                            いいね取り消し{{ $post->likes->count() }}
+
+                                    </button>
+                                </form>
+                            @endif
+                        </div>
                     </div>
                 </div>
             @endforeach
