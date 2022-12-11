@@ -35,7 +35,7 @@
             　  <h1 id='ans' class="text-center fs-1r" style="color:yellow;"> 
             　    
             　  </h1>
-            　  <button id='next'>つぎへ</button>
+            　  <button id='next'　type="button" class="btn btn-warning">つぎへ</button>
             　</div>　
         </div>
         <script src="{{ asset('js/games.js') }}"></script>
