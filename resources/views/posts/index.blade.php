@@ -8,6 +8,7 @@
         <title>BabyApp</title>
         
         <link href="css/post.index.css" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/post.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     </head>
     
@@ -25,49 +26,47 @@
             </h2>
 
 
-            <div class='container'>     
                 <div class='posts'>
                     @foreach ($posts as $post)
-                        <div class="col-9 my-3 mx-auto">
-                            <div class="card mb-3">
-                                <div class="row no-gutters">
-                                    <div class="post">
-                                        <div class="title">
-                                            <h3>投稿タイトル{{ $post->title }}</a></h3>
-                                        </div>
-                                        <div class="text">
-                                            <p>本文{{ $post->text }}</p>
-                                        </div>
-                                        <div class="user">
-                                            <p>投稿者{{ $post->user->name}}</p>
-                                        </div>
-                                        <div class="like">
-                                            @if(in_array($post->id, $is_like) == false)
-                                                <form action="/like" method="POST">
-                                                    @csrf
-                                                    <input type="hidden" name="post_id" value="{{ $post->id }}">
-                                                    <button type="submit">
-                                                        いいね{{ $post->likes->count() }}
-                                                    </button>
-                                                </form>
-                                            @else
-                                                <form action="/" method="POST">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <input type="hidden" name="post_id" value="{{ $post->id }}">
-                                                    <button type="submit">
-                                                        いいね取り消し{{ $post->likes->count() }}
-                                                    </button>
-                                                </form>
-                                            @endif
-                                        </div>
+                        <div class="index-profile">
+                            <div class="post">
+                                <div class="title">
+                                    <h3>投稿タイトル{{ $post->title }}</a></h3>
+                                </div>
+                                <div class="text">
+                                    <p> {{ $post->text }}</p>
+                                </div>
+                                <div class="flex-display">
+                                    <div class="user">
+                                        <p>投稿者{{ $post->user->name}}</p>
+                                    </div>
+                                    <div class="like">
+                                        @if(in_array($post->id, $is_like) == false)
+                                            <form action="/like" method="POST">
+                                                @csrf
+                                                <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                                <button type="submit">
+                                                    いいね：{{ $post->likes->count() }}
+                                                </button>
+                                            </form>
+                                        @else
+                                            <form action="/" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                                <button type="submit">
+                                                    <div class="like-color">
+                                                        いいね：{{ $post->likes->count() }}
+                                                    </div>
+                                                </button>
+                                            </form>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
-            </div>
         
             <div class="paginate">
                 {{ $posts->links() }}
